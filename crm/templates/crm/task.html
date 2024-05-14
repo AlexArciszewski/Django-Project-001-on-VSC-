@@ -1,0 +1,34 @@
+{% extends 'crm/base.html'%}
+
+<html>
+
+{% block content %}
+
+    <h3> Tasks </h3>
+
+    <hr>
+    <hr>
+
+    {% for task in allTasks  %}
+
+        <br>
+
+        {{task.title}}
+
+        <br>
+
+        {{task.description}}
+
+        <br>
+
+        {{task.created}}
+
+        <br>
+
+
+    {% endfor %}
+
+
+{% endblock %}
+
+</html>
