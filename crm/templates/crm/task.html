@@ -9,25 +9,11 @@
     <hr>
     <hr>
 
-    {% for task in allTasks  %}
-
-        <br>
-
-        {{task.title}}
-
-        <br>
-
-        {{task.description}}
-
-        <br>
-
-        {{task.created}}
-
-        <br>
-
-
-    {% endfor %}
-
+    {{singleTask.title}}
+    <br>
+    {{singleTask.description}}
+    <br>
+    {{singleTask.created}}
 
 {% endblock %}
 
