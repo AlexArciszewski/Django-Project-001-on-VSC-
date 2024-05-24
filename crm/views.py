@@ -1,9 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 # Create your views here.
 from django.http import HttpResponse
 #dodajemy import response
-
 
 from .models import Task
 
@@ -17,9 +16,9 @@ def homepage(request):
 
 def task(request):
     
-    queryDataSingle = Task.objects.get(id=3)
+    queryDataAll = Task.objects.all()
     
-    context = {'singleTask':queryDataSingle}
+    context = {'AllTasks':queryDataAll}
     
     return render(request, 'crm/task.html', context)
     
@@ -27,15 +26,23 @@ def register(request):
     """dodajemy metodę zwracającą response o stronie rejestracji i taki będzie wyglad strony co w return"""
     return render(request, 'crm/register.html')
 
-def task_form(request):
+def create_task(request):
     form = TaskForm()
-    #prypisujemy zmiennę do importortowanego formularza
+    #sprawdzamy czy jest to metoda POST
+    if request.method == 'POST':
+        
+        form = TaskForm(request.POST)
+        #jeśli nie ma błedów sprawdzamy błędy
+        if form.is_valid():
+            
+            form.save()
+            
+            return redirect('task')
     
-    #teraz renderujemy modelform dict z context jak wcześniej
     
     context = {'TaskForm': form}
     
-    return render(request, 'task-form.html', context)
+    return render(request, 'create-task.html', context)
     #outputujemy formularze z wszystkimi polami ajkie tu mamy title i description data jest wbudowana w django
     
     

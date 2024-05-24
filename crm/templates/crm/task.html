@@ -4,16 +4,37 @@
 
 {% block content %}
 
-    <h3> Tasks </h3>
+<h3> Tasks </h3>
 
-    <hr>
-    <hr>
+<a href="{% url 'create-task' %}"> Create a task... </a>
 
-    {{singleTask.title}}
-    <br>
-    {{singleTask.description}}
-    <br>
-    {{singleTask.created}}
+<hr>
+
+
+
+{% for task in AllTasks %}
+
+<br>
+
+{{task.id}}
+
+<br>
+{{task.title}}
+
+<br>
+{{task.description}}
+
+<br>
+{{task.created}}
+
+<hr>
+{% endfor %}
+
+<br>
+<br>
+
+
+
 
 {% endblock %}
 
