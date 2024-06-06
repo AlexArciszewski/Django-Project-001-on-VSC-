@@ -1,33 +1,41 @@
+{% load static %}
+
+
 <html>
 
+<head>
+
+    <link rel="stylesheet" type="text/css" href="{% static ''   %}">
 
 
-    <h1> Webside under development  </h1>
-
-    <hr>
-
-    <a href="{% url '' %}"> Homepage... </a>
-
-    &nbsp;
+</head>
 
 
-    <a href="{% url 'create-task' %}"> Create a task... </a>
+<h1> Webside under development </h1>
 
-    &nbsp;
+<hr>
 
-    <a href="{% url 'view-tasks' %}"> View tasks </a>
+<a href="{% url '' %}"> Homepage... </a>
 
-    &nbsp;
-
-    <a href="{% url 'register' %}"> Register tasks </a>
-
-    <hr>
-    
-    {% block content %}
+&nbsp;
 
 
-    {% endblock %}
+<a href="{% url 'create-task' %}"> Create a task... </a>
 
+&nbsp;
+
+<a href="{% url 'view-tasks' %}"> View tasks </a>
+
+&nbsp;
+
+<a href="{% url 'register' %}"> Register tasks </a>
+
+<hr>
+
+{% block content %}
+
+
+{% endblock %}
 
 
 </html>
