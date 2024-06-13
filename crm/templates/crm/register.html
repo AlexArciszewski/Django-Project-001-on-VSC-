@@ -3,19 +3,29 @@
 
 <html>
 
-    {% block content %}
+{% block content %}
 
-    <h3> Register here!   </h3>
+<h3> Register here! </h3>
 
-    <p> This is where you can create your account </p>
+<p> This is where you can create your account </p>
 
-    {% endblock %}
+<hr>
+
+<form method="POST" autocomplete="'off">
+
+    {% csrf_token %}
+
+    <!--Tworze kod formularza-->
+    {{ RegistrationForm.as_p }}
 
 
+    <input type="submit" value="Create account" />
 
 
+</form>
 
 
+{% endblock %}
 
 
 

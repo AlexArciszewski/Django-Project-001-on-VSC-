@@ -18,6 +18,10 @@ urlpatterns = [
     path('delete-task/<str:pk>', views.delete_task, name="delete-task"),
     
  #importujemy funkcje register z views.py  pod routem "register"
+    path('my-login', views.my_login, name="my-login"),
+    
+    path('dashboard', views.dashboard, name="dashboard"),
+ 
  
 ]
 

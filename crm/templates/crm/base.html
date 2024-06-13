@@ -1,15 +1,12 @@
 {% load static %}
 
-
 <html>
 
 <head>
 
-    <link rel="stylesheet" type="text/css" href="{% static ''   %}">
-
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css'  %}">
 
 </head>
-
 
 <h1> Webside under development </h1>
 
@@ -19,7 +16,6 @@
 
 &nbsp;
 
-
 <a href="{% url 'create-task' %}"> Create a task... </a>
 
 &nbsp;
@@ -28,14 +24,17 @@
 
 &nbsp;
 
-<a href="{% url 'register' %}"> Register tasks </a>
+<a href="{% url 'register' %}"> Register User</a>
 
-<hr>
+
+&nbsp;
+
+<a href="{% url 'my-login' %}"> Login User</a>
 
 {% block content %}
 
-
 {% endblock %}
 
+<script src="{% static 'js/app.js'        %}"></script>
 
 </html>

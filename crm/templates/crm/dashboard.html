@@ -1,0 +1,32 @@
+{% extends 'crm/base.html'%}
+
+
+<html>
+
+{% block content %}
+
+<h3> program Dashboard! </h3>
+
+<p> This is the program Dashboard </p>
+
+<hr>
+
+<form method="POST" autocomplete="'off">
+
+    {% csrf_token %}
+
+    <!--Tworze kod formularza bedzie inny niż RegistrationForm.as_p-->
+    
+
+
+    <input type="submit" value="Login" />
+
+
+</form>
+
+
+{% endblock %}
+
+
+
+</html>
