@@ -16,7 +16,7 @@ from django.contrib.auth.models import auth
 from django.contrib.auth import authenticate, login, logout
 #to pozwala logować sie i wylogowac z konta a authenticate to funkcja porównująca username wpisane z tym z bazy
 
-
+from django.contrib.auth.decorators import login_required
 
 #homepage/Firt page of webside
 
@@ -171,7 +171,27 @@ def my_login(request):
     
 #Dashboard
 
-
+@login_required(login_url='my-login')
 def dashboard(request):
     
     return render(request, 'crm/dashboard.html')
+
+
+
+
+
+#Logout
+
+def user_logout(request):
+    
+    auth.logout(request)
+    
+    return redirect("")
+    
+    
+    
+    
+    
+    
+    
+    

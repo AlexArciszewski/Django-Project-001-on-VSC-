@@ -11,15 +11,20 @@
 
 <hr>
 
+<a href="{% url 'user-logout' %}"> Logout </a>
+
+
+&nbsp;
+
 <form method="POST" autocomplete="'off">
 
     {% csrf_token %}
 
     <!--Tworze kod formularza bedzie inny niż RegistrationForm.as_p-->
-    
 
 
-    <input type="submit" value="Login" />
+
+    <!-- <input type="submit" value="Login" /> -->
 
 
 </form>
